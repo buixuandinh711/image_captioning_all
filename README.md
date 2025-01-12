@@ -1,1 +1,1 @@
-# image_captioning_all
+# Image Captioning Project

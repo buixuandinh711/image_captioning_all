@@ -1,0 +1,13 @@
+services:
+  triton:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: tritonserver --model-repository=/models
+    shm_size: '1gb'
+    volumes:
+      - ./model_repository_python:/models
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
