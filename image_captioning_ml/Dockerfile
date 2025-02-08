@@ -1,5 +1,5 @@
 # Base image
-FROM nvcr.io/nvidia/tritonserver:24.12-py3
+FROM --platform=linux/amd64 nvcr.io/nvidia/tritonserver:24.12-py3
 
 # install Python modules needed by the Python app
 RUN apt-get update \
