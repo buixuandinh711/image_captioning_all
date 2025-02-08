@@ -4,13 +4,15 @@ import { ImageRgbData } from 'src/infers/base64-image.pipe';
 @Injectable()
 export class InfersService {
   private readonly tritonUrl: string;
+  private readonly captioningModel: string;
 
-  constructor(tritonUrl: string) {
+  constructor(tritonUrl: string, captioningModel: string) {
     this.tritonUrl = tritonUrl;
+    this.captioningModel = captioningModel;
   }
 
   async inferCaptioning(image: ImageRgbData) {
-    const inferResult = await this.submitInfer('git', [
+    const inferResult = await this.submitInfer(this.captioningModel, [
       {
         name: 'image',
         datatype: 'FP32',

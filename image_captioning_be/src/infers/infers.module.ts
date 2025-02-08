@@ -11,6 +11,7 @@ import 'dotenv/config';
       useFactory: () =>
         new InfersService(
           process.env.TRITON_REST_URL ?? 'http://127.0.0.1:8000',
+          process.env.CAPTIONING_MODEL ?? 'git',
         ),
     },
   ],
